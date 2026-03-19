@@ -25,7 +25,7 @@ I've been using the original parsync for a long time, but it's no longer maintai
 Just add tap and install homebrew package.
 
 ```bash
-brew tap rioriost/parasync
+brew tap rioriost/tap
 brew install parasync
 ```
 
@@ -60,7 +60,7 @@ optional arguments:
 
 ## Comparison with the original rsync
 
-![Comparison](https://github.com/rioriost/homebrew-parasync/raw/main/rsync_parasync.png)
+![Comparison](https://github.com/rioriost/parasync/raw/main/rsync_parasync.png)
 
 * Environment
   * Local: macOS Sequoia 15.3, MacStudio 2022, Apple M1 Max (10-Core), 64GB Mem, 512GB SSD
@@ -119,6 +119,9 @@ parasync --max-procs 6 --progress /Users/rifujita/parasync_src/ rsync://192.168.
   And, parasync does not use 'compress' option of rsync. With wide network bandwidth, it may be better not to use 'compress' option.
 
 ## Release Notes
+
+### 0.1.7 Release
+* Move formula to rioriost/tap
 
 ### 0.1.7 Release
 * Dependency update.
