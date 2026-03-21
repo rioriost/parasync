@@ -1,45 +1,49 @@
 [project]
 name = "parasync"
-authors = [
-    {name = "Rio Fujita", email = "rifujita@microsoft.com"},
-]
 version = "0.1.8"
-license = {file = "LICENSE"}
 description = "parasync is a parallelized rsync tool written in Python."
-readme = {file = "README.md", content-type = "text/markdown"}
+readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.13"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Rio Fujita", email = "rifujita@microsoft.com" },
+]
 dependencies = [
     "psutil>=7.2.2",
 ]
 
-[project.optional-dependencies]
-test = [
-  "pytest>=9",
-  "pytest-cov>=7",
-]
+[project.urls]
+Homepage = "https://github.com/rioriost/parasync"
+Issues = "https://github.com/rioriost/parasync/issues"
+Repository = "https://github.com/rioriost/parasync"
 
 [project.scripts]
 parasync = "parasync.main:main"
 
+[project.optional-dependencies]
+test = [
+    "pytest>=9",
+    "pytest-cov>=7",
+]
+
+[dependency-groups]
+dev = [
+    "build>=1.2.2",
+    "twine>=6.1.0",
+    "ruff>=0.12.0",
+]
+
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling>=1.25.0"]
 build-backend = "hatchling.build"
 
-[tool.hatch.build.targets.wheel]
-packages = ["src/parasync"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
 
-[project.urls]
-Homepage = "https://github.com/rioriost/parasync"
-Issues = "https://github.com/rioriost/parasync/issues"
+[tool.ruff]
+line-length = 100
+target-version = "py313"
 
-[tool.hatch.build.targets.sdist]
-include = [
-  "src/parasync/*.py",
-  "*.py",
-]
-exclude = [
-  "parasync.rb",
-  "uv.lock",
-  "dist/.DS_Store",
-  ".envrc",
-]
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
