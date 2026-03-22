@@ -25,8 +25,7 @@ I've been using the original parsync for a long time, but it's no longer maintai
 Just add tap and install homebrew package.
 
 ```bash
-brew tap rioriost/tap
-brew install parasync
+brew install rioriost/tap/parasync
 ```
 
 You can also install it on Linux with homebrew or install it from the source code.
@@ -117,35 +116,6 @@ parasync --max-procs 6 --progress /Users/rifujita/parasync_src/ rsync://192.168.
 * 0.1.0: parasync uses rsync, not scp or sftp, and so on. If a directory specified does not exist on the remote destination, it fails. Because ryync does not fork shell on the remote host.
   e.g., `parasync /path/to/local_dir/ rsync://host_name/path/to/remote_dir/` fails if `/path` does not exist on the remote host.
   And, parasync does not use 'compress' option of rsync. With wide network bandwidth, it may be better not to use 'compress' option.
-
-## Release Notes
-
-### 0.1.7 Release
-* Move formula to rioriost/tap
-
-### 0.1.7 Release
-* Dependency update.
-
-### 0.1.6 Release
-* Dependency update.
-
-### 0.1.5 Release
-* Dependency update.
-
-### 0.1.4 Release
-* Dependency update.
-
-### 0.1.3 Release
-* Dependency update.
-
-### 0.1.2 Release
-* Dependency update.
-
-### 0.1.1 Release
-* Updated for the dependencies.
-
-### 0.1.0 Release
-* First release.
 
 ## License
 MIT License
